@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = 'a';
+const prefix = 'K';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -35,7 +35,7 @@ var ti={}
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = ['ahelp','Type ahelp'];
+    var setGame = ['Khelp','Type Khelp'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -220,14 +220,14 @@ fs.writeFile("./creditsCode.json", JSON.stringify(credits), (err) => {
       credits: m + 0.5,
   }
   
-    if(message.content.startsWith(prefix + "credit" || prefix + "credits")) {
+    if(message.content.startsWith(prefix + "credfgdgrit" || prefix + "credfsdgrgts")) {
 message.channel.send(`**${message.author.username}, your :credit_card: balance is \`\`${userData.credits}\`\`.**`);
 }
 });
 
 client.on('message', async message => {
     let amount = 250;
-    if(message.content.startsWith(prefix + "daily")) {
+    if(message.content.startsWith(prefix + "daiertrgly")) {
     if(message.author.bot) return;
     if(coolDown.has(message.author.id)) return message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes in \`\`1 Day\`\`.**`);
     
@@ -379,7 +379,7 @@ client.on('message', msg => {
 };
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.trans")) {
+    if (message.content.startsWith("Ktrans")) {
       
     let toTrans = message.content.split(' ').slice(1);
     let language;
@@ -485,7 +485,7 @@ if (command == "z5rf") {
 });
 
 client.on('message', message => {
-    if (message.content === "G.rooms") {
+    if (message.content === "Krooms") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -649,13 +649,13 @@ message.channel.send({embed});
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.bans")) {
+    if (message.content.startsWith("Kbans")) {
         message.guild.fetchBans()
         .then(bans => message.channel.send(`Number of banned persons **${bans.size}** `))
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.avatar")) {
+    if (message.content.startsWith("Kavatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -731,7 +731,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("516473846983950336").send(
+client.users.get("401441334864510986").send(
     "\n" + "**" + "? السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ? المرسل : " + "**" +
@@ -1296,7 +1296,7 @@ if(bz.content.startsWith(prefix + 'make')) {
        });
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
-   if(message.content.split(' ')[0] == 'G.color'){
+   if(message.content.split(' ')[0] == 'Kcolor'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`**There's No Color With This Number ** :x: `)
@@ -2367,7 +2367,7 @@ var al7arthyCodes2 = ["??__60%__  **|**  ??__40%__","??__63%__  **|**  ??__37%__
 client.on('message', message => {
     if(!message.guild) return;
     if (message.author.bot) return;
-      let id = message.author.id,prefix="a";//البريفكس
+      let id = message.author.id,prefix="K";//البريفكس
       if (ti[id] && (new Date).getTime() - ti[id] < 20*1000) {
           let r = (new Date).getTime() - ti[id];
           r = 20*1000 - r;
@@ -2459,7 +2459,7 @@ const zead = [
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ];
  client.on('message', message => {
- if (message.content.startsWith('G.مريم')) {
+ if (message.content.startsWith('Kمريم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -2535,7 +2535,7 @@ var Za7f = [
 ];
 
 client.on('message', message => {
- if (message.content.startsWith("G.عقاب")) {
+ if (message.content.startsWith("Kعقاب")) {
               if(!message.channel.guild) return message.reply('** This command only for servers**');
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
@@ -2931,43 +2931,52 @@ m.sendMessage(args)
 })
 }
 });
+var id = ['401441334864510986'] //تذكر إذا كنت تبي تضيف شخص معاك حط فاصله وبعدين العلامه '
+var initcmd = 'K'
+const developers = id
+const adminprefix = initcmd;
 client.on('message', message => {
-  if (!message.content.startsWith(prefix)) return;
-  var args = message.content.split(' ').slice(1);
-  var argresult = args.join(' ');
-  if (message.author.id == 410835593451405312) return;
-
-
-if (message.content.startsWith(prefix + 'playing')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
-} else
-
-if (message.content.startsWith(prefix + 'streem')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
-    message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
-} else
-
-if (message.content.startsWith(prefix + 'setname')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    var argresult = message.content.split(' ').slice(2).join(" ")
+      if (!developers.includes(message.author.id)) return;
+     
+  if (message.content.startsWith(adminprefix + 'ply')) {
+    if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+    client.user.setGame(argresult);
+      message.channel.send("**:white_check_mark: | The Playing Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else
+  if (message.content.startsWith(adminprefix + 'wat')) {
+        if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+ 
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send("**:white_check_mark: | The Watching Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else
+  if (message.content.startsWith(adminprefix + 'lis')) {
+        if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+ 
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send("**:white_check_mark: | The Listening Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else
+  if (message.content.startsWith(adminprefix + 'stream')) {
+        if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+ 
+    client.user.setGame(argresult, "https://www.twitch.tv/fadi_games2");
+      message.channel.send("**:white_check_mark: | The Streaming Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  }
+  if (message.content.startsWith(adminprefix + 'username')) {
+        if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+ 
   client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
-  return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-
-if (message.content.startsWith(prefix + 'setavatar')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-client.user.setAvatar(argresult);
-    message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-} else
-
-
-if (message.content.startsWith(prefix + 'watching')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-    client.user.setActivity(argresult, {type : 'watching'});
- message.channel.sendMessage(`**${argresult}** : تم تغيير الووتشينق الى`)
+if (message.content.startsWith(adminprefix + 'editavatar')) {
+      if (!argresult) return message.channel.send(':no_entry: | يرجى كتابة أي شيء بعد ألأمر')
+ 
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
 client.on('message', async message => {
